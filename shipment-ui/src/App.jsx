@@ -15,7 +15,7 @@ function App() {
     setShipments(dummyShipments);
 
     socket.on("shipmentUpdate", (newShipment) => {
-      setShipments((prevShipments) => [newShipment, ...prevShipments]);
+      setShipments([...newShipment]);
     });
 
     return () => socket.off("shipmentUpdate");
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <ShipmentMap shipments={dummyShipments} />
+      <ShipmentMap shipments={shipments} />
       <ShipmentList shipments={shipments} />
     </div>
   );
