@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <ShipmentMap shipments={shipments} />
+      <ShipmentMap shipments={dummyShipments} />
       <ShipmentList shipments={shipments} />
     </div>
   );
